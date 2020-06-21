@@ -1,0 +1,46 @@
+<!ELEMENT connection ( named-queries? ) >
+<!ATTLIST connection compressionMode NMTOKEN #IMPLIED >
+<!ATTLIST connection compressionThreshold NMTOKEN #IMPLIED >
+<!ATTLIST connection connectionPooling NMTOKEN #IMPLIED >
+<!ATTLIST connection driver NMTOKEN #REQUIRED >
+<!ATTLIST connection user NMTOKEN #IMPLIED >
+<!ATTLIST connection password NMTOKEN #IMPLIED >
+<!ATTLIST connection loginHandler NMTOKEN #IMPLIED >
+<!ATTLIST connection id NMTOKEN #REQUIRED >
+<!ATTLIST connection rowPacketSize NMTOKEN #IMPLIED >
+<!ATTLIST connection prefetchResultSetMetaData NMTOKEN #IMPLIED>
+<!ATTLIST connection url NMTOKEN #REQUIRED >
+<!ATTLIST connection charset NMTOKEN #IMPLIED>
+<!ATTLIST connection traceCommandCount NMTOKEN #IMPLIED>
+<!ATTLIST connection traceOrphanedObjects NMTOKEN #IMPLIED>
+
+<!ELEMENT entry ( #PCDATA ) >
+<!ATTLIST entry id NMTOKEN #REQUIRED >
+
+<!ELEMENT named-queries ( entry ) >
+
+<!ELEMENT entry ( #PCDATA ) >
+<!ATTLIST entry id NMTOKEN #REQUIRED >
+
+<!ELEMENT allow ( #PCDATA ) >
+<!ATTLIST allow type NMTOKEN #IMPLIED >
+
+<!ELEMENT deny ( #PCDATA ) >
+<!ATTLIST deny type NMTOKEN #IMPLIED >
+
+<!ELEMENT query-filters ( allow+, deny+ ) >
+
+<!ELEMENT occt EMPTY>
+<!ATTLIST occt checkingPeriod NMTOKEN #IMPLIED >
+<!ATTLIST occt timeout NMTOKEN #IMPLIED >
+
+<!ELEMENT rmi EMPTY >
+<!ATTLIST rmi createRegistry NMTOKEN #IMPLIED >
+<!ATTLIST rmi objectName NMTOKEN #IMPLIED >
+<!ATTLIST rmi port NMTOKEN #IMPLIED >
+<!ATTLIST rmi listenerPort NMTOKEN #IMPLIED >
+<!ATTLIST rmi useSSL NMTOKEN #IMPLIED >
+<!ATTLIST rmi rmiClientSocketFactory NMTOKEN #IMPLIED >
+<!ATTLIST rmi rmiServerSocketFactory NMTOKEN #IMPLIED >
+
+<!ELEMENT vjdbc-configuration ( rmi, connection+ ) >
