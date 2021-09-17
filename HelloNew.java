@@ -4,6 +4,6 @@
  */
 public class HelloNew {
   public static void main(String[] args) {
-    System.out.println("Hello Tulasiram");
+    System.out.println("Hello Tulasi");
   }
 }
